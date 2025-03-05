@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.name }}</title>
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+    <p>Цена: {{ product.price }} руб.</p>
+
+    <h2>Характеристики</h2>
+    <ul>
+        {% for name, value in characteristics.items() %}
+            <li>{{ name }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Фотографии</h2>
+    {% for photo_url in photos %}
+        <img src="{{ photo_url }}" width="200" style="margin: 10px;">
+    {% endfor %}
+</body>
+</html>
