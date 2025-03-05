@@ -1,6 +1,9 @@
-flask
+flask~=3.1.0
 flask-sqlalchemy
-Flask-Migrate
-minio
-faker
+Flask-Migrate~=4.1.0
+minio~=7.2.15
+faker~=36.1.1
 python-dotenv
+requests~=2.32.3
+alembic~=1.15.1
+SQLAlchemy~=2.0.38
