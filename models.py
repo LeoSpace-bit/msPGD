@@ -1,3 +1,4 @@
+#models
 from extensions import db
 
 class Category(db.Model):
@@ -30,11 +31,20 @@ class CharacteristicType(db.Model):
     unit = db.Column(db.String(20))
     data_type = db.Column(db.String(20), nullable=False)
 
+
 class ProductCharacteristic(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
     characteristic_type_id = db.Column(db.Integer, db.ForeignKey('characteristic_type.id'), nullable=False)
     value = db.Column(db.String(200))
+
+    characteristic_type = db.relationship('CharacteristicType', backref='product_characteristics')
+
+# class ProductCharacteristic(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
+#     characteristic_type_id = db.Column(db.Integer, db.ForeignKey('characteristic_type.id'), nullable=False)
+#     value = db.Column(db.String(200))
 
 class Photo(db.Model):
     id = db.Column(db.Integer, primary_key=True)

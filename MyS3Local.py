@@ -1,3 +1,4 @@
+#MyS3Local.py
 from minio import Minio
 from minio.error import S3Error
 import os
@@ -8,7 +9,6 @@ minio_client = Minio(
     secret_key="minioadmin",
     secure=False
 )
-
 
 def upload_photo_to_minio(file_path, bucket_name, object_name):
     try:

@@ -11,3 +11,13 @@ flask db upgrade
 python seed.py # тестовые данные (перепроверить доступность картинок)
 python app.py
 http://localhost:5000/product/1
+
+minio:
+minioadmin
+minioadmin
+
+Start:
+docker-compose up -d
+python seed.py # ОПЦИОНАЛЬНО, тестовые данные (перепроверить доступность картинок)
+python app.py
+http://localhost:5000/product/1
